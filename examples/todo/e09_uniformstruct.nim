@@ -1,6 +1,6 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 # Uniform struct example                            |
 # Current time can be accessed in shader code.      |
 # The Uniform struct also contains a color uniform  |

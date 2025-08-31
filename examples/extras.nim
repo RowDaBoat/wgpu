@@ -1,6 +1,6 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 # Note:                                      |
 #   This file is just a reference !!         |
 # In a real app, everything in this file     |

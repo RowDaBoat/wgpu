@@ -1,6 +1,6 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  :
-#:____________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 
 const  # Not Used, reference only : Undefined Limits are set with `type.high`
   MaxVertexAttributes      * = 16

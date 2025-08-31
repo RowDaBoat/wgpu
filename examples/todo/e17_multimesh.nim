@@ -1,7 +1,7 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
-# Multi-Mesh Example                                  |_
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
+# Multi-Mesh Example                                   |
 # Draws multiple meshes using one single pipeline.     |
 # Instanced Cubes, and a Pyramid with its own buffer.  |
 #______________________________________________________|

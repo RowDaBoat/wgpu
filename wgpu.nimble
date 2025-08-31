@@ -1,14 +1,14 @@
-#:_______________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  LGPLv3  |
-#:_______________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 when not defined(nimscript):  import system/nimscript  # Silence nimsuggest errors
 import std/[ os, strformat, strutils, sequtils, algorithm ]
 # Package
 packageName   = "wgpu"
 version       = "24.0.3.8"  # First three numbers in sync with wgpu-native
-author        = "sOkam"
+author        = "heysokam, RowDaBoat"
 description   = "Native WebGPU for Nim | wgpu-native"
-license       = "LGPL-3.0-or-later"
+license       = "MIT"
 # Project Setup
 srcDir        = "src"
 binDir        = "bin"

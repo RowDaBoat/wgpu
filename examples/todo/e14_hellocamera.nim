@@ -1,6 +1,6 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 # Minimal Camera controller                         |
 # Vertex colored cube,                              |
 # with perspective and WASD+Mouse camera movement.  |

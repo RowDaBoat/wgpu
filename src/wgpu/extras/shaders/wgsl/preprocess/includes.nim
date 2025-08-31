@@ -1,6 +1,6 @@
-#:_______________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  LGPLv3  |
-#:_______________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 ## @fileoverview
 ## `@include` resolver implementation for wgsl shaders.
 ##  - Resolution is recursive, nested includes will work.

@@ -1,9 +1,9 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
-# Instanced Cube Example                              |___________
-# Draws multiple textured cubes, using only one set of geometry.  |
-#_________________________________________________________________|
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
+# Instanced Cube Example
+# Draws multiple textured cubes, using only one set of geometry.
+#________________________________________________________________|
 # std dependencies
 import std/os
 import std/strformat

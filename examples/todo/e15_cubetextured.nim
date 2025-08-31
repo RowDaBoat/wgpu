@@ -1,8 +1,8 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
-# Textured Cube Example                               |___
-# Applies a generated texture to the cube, using its UVs  |
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
+# Textured Cube Example
+# Applies a generated texture to the cube, using its UVs
 #_________________________________________________________|
 # std dependencies
 import std/os

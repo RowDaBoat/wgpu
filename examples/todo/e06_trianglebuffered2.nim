@@ -1,6 +1,6 @@
-#:____________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  MIT  |
-#:____________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 # Buffer-based Triangle                         |
 # with a deinterleaved vertex attribute buffer  |
 # Attributes:  pos, color, uv, normal           |

@@ -1,6 +1,6 @@
-#:_______________________________________________________
-#  wgpu  |  Copyright (C) Ivan Mar (sOkam!)  |  LGPLv3  |
-#:_______________________________________________________
+#:___________________________________________________
+#  wgpu  |  Copyright (C) Nim wgpu Authors  |  MIT  :
+#:___________________________________________________
 ## @fileoverview Cable connector to all of the extra utilities for wgpu
 #_______________________________________________________________________|
 import ./extras/types       as extras_types      ; export extras_types
