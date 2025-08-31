@@ -12,7 +12,6 @@ license       = "MIT"
 # Project Setup
 srcDir        = "src"
 binDir        = "bin"
-skipFiles     = @["build.nim"]
 # Build requirements
 requires "nim >= 2.0.0"
 
