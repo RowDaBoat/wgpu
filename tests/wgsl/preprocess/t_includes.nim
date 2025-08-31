@@ -7,7 +7,7 @@ import std/os
 # @deps wgpu
 import wgpu/extras/shaders/wgsl/preprocess/includes
 # @deps tests
-import minitest
+import ../../minitest
 const casesDir = currentSourcePath().parentDir()/"cases"
 
 describe "wgsl.preprocess.includes":

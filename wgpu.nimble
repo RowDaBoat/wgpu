@@ -62,7 +62,6 @@ task git, "Internal:  Updates the wgpu-native submodule.":
   withDir "src/wgpu/C/wgpu-native": exec "git pull --recurse-submodules origin trunk"
 #_____________________________
 # Unit Tests
-taskRequires "tests", "https://github.com/heysokam/minitest#head"
 task tests, "Runs all tests":
   for file in "./tests".walkDirRec.toSeq.reversed:
     if not file.fileExists(): continue
