@@ -54,7 +54,7 @@ elif defined(linux) and defined(wayland):
 # @section Windows context creation
 #_____________________________
 elif defined(windows):
-  proc getModuleHandle *(lpModuleName :cstring) :pointer {.importc: "GetModuleHandleW", winapi, stdcall, dynlib: "kernel32".}
+  proc getModuleHandle *(lpModuleName :cstring) :pointer {.importc: "GetModuleHandleW", stdcall, dynlib: "kernel32".}
   proc getSurfaceWin *(instance :Instance; win :glfw.Window) :Surface=
     let hwnd      = glfw.getWin32Window(win)
     let hinstance = getModuleHandle(nil)

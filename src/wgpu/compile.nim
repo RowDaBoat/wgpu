@@ -13,15 +13,20 @@ import std/compilesettings
 # Helpers
 #_____________________________
 # TODO: Switch to execShellCmd when 2.0 devel becomes stable
+# TODO: Capture errors and abort on failure
 proc sh (cmd :string; dir :string= "") :void=
   ## Executes the given shell command and writes the output to console.
   ## Same as the nimscript version, but usable at compile time in static blocks.
   ## Runs the command from `dir` when specified.
-  when defined(windows): {.warning: "running `sh -c` commands on Windows has not been tested".}
   var command :string
-  if dir != "":  command = &"cd {dir}; " & cmd
-  else:          command = cmd
-  echo gorgeEx(&"sh -c \"{$command}\"").output
+  when defined(windows):
+    if dir != "":  command = &"cd /d {dir} && {cmd}"
+    else:          command = cmd
+    echo gorgeEx(&"cmd /c \"{$command}\"").output
+  else:
+    if dir != "":  command = &"cd {dir}; " & cmd
+    else:          command = cmd
+    echo gorgeEx(&"sh -c \"{$command}\"").output
 #_____________________________
 proc cp *(src, trg :string) :void=
   ## Copies `src` to `trg`, using the shell's `cp` command.
@@ -69,8 +74,15 @@ static:
 #_________________________________________________
 # Pass ldflag to link to the folder where the libs are output
 #_____________________________
-when defined(debug):  {.passL: &"-L{dbgDir}".}
-else:                 {.passL: &"-L{rlsDir}".}
+when defined(windows) and defined(vcc):
+  # MSVC: use /link /LIBPATH: to pass library path to linker (not compiler)
+  # The /link prefix ensures it goes to the linker, not the compiler
+  when defined(debug):  {.passL: &"/link /LIBPATH:\"{dbgDir}\"".}
+  else:                 {.passL: &"/link /LIBPATH:\"{rlsDir}\"".}
+else:
+  # Unix-style -L flag for GCC/Clang/MinGW/Zig
+  when defined(debug):  {.passL: &"-L{dbgDir}".}
+  else:                 {.passL: &"-L{rlsDir}".}
 
 #_________________________________________________
 # Link to stdc++ for zigcc
@@ -93,8 +105,8 @@ when defined(unix):       # Both Linux and Mac
 #_____________________________
 # Windows
 elif defined(windows):
-  when not (defined(gcc) or defined(zig)):
-    {.warning: "Mingw/ZigCC are the only compilers currently supported on Windows. clang will most likely break, and vcc is untested".}
+  when not (defined(gcc) or defined(zig) or defined(vcc)):
+    {.warning: "Mingw/ZigCC/MSVC are the only compilers currently supported on Windows. clang will most likely break".}
   {.link: "user32.lib".}
   {.link: "userenv.lib".}
   {.link: "ws2_32.lib".}
@@ -106,8 +118,16 @@ elif defined(windows):
   {.link: "dxgi.lib".}
   {.link: "bcrypt.lib".}
   {.link: "advapi32.lib".}
-  {.passL: "-l:wgpu_native.lib".}  # Will break with clang on windows. Unknown with vcc
+  when defined(vcc):
+    {.link: "ntdll.lib".}
+    {.link: "opengl32.lib".}
+    {.link: "ole32.lib".}
+    {.link: "propsys.lib".}
+    {.link: "runtimeobject.lib".}
+    {.link: "oleaut32.lib".}
+    {.link: "wgpu_native.lib".}
+  else:
+    {.passL: "-l:wgpu_native.lib".}
 #_____________________________
 # Other
 else:  {.error: "Supported platforms are currently Windows and Unix".}
-
