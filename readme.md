@@ -26,9 +26,9 @@ _As a reference, it is easier to follow than the infamous Learn OpenGL, in my op
 - [LLVM](https://rust-lang.github.io/rust-bindgen/requirements.html)
 - [MSBuild](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio&viewFallbackFrom=vs-2019)
 - [Windows SDK and MSVC](https://learn.microsoft.com/en-us/windows/apps/windows-sdk/)
-- [nglfw](https://github.com/RowDaBoat/nglfw): for extra features provided at `wgpu/extras`
 - [Make](https://gnuwin32.sourceforge.net/packages/make.htm)
 - [CMake](https://cmake.org/)
+- [nglfw](https://github.com/RowDaBoat/nglfw): for extra features provided at `wgpu/extras`
 
 ### Static Linking
 This library is compiled automatically and linked statically when importing.  
