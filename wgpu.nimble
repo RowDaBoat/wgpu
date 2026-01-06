@@ -54,6 +54,9 @@ example triangle,  "Example 02:  hellotriangle.",                   "e02_hellotr
 # example instance,  "Example 16:  cube instanced 100 times.",        "e16_cubeinstanced"
 # example multimesh, "Example 17:  multi-mesh. cubes + pyramid.",     "e17_multimesh"
 
+before install:
+  exec "git submodule update --init --recursive"
+
 #_______________________________________
 # @section Internal Management
 #_____________________________
