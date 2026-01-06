@@ -16,17 +16,19 @@ _As a reference, it is easier to follow than the infamous Learn OpenGL, in my op
   - [x] Shortened `camelCase` for Function names
 - [x] Linux suppport
 - [x] Mac support
-- [ ] Windows support
+- [x] Windows support
 - [ ] Web support (wasm with emscripten)  
       _(note: not planned. send a PR if you figure it out)_
 
 ## Build Info
-```md
-# Requirements  (manually installed by the user)
-nim   # For compiling the wrapper
-rust  # For compiling wgpu-native
-nglfw # For using the `wgpu/extras` features provided by the lib
-```
+### Requirements  (manually installed by the user)
+- [Rust](https://rust-lang.org/)
+- [LLVM](https://rust-lang.github.io/rust-bindgen/requirements.html)
+- [MSBuild](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio&viewFallbackFrom=vs-2019)
+- [Windows SDK and MSVC](https://learn.microsoft.com/en-us/windows/apps/windows-sdk/)
+- [nglfw](https://github.com/RowDaBoat/nglfw): for extra features provided at `wgpu/extras`
+- [Make](https://gnuwin32.sourceforge.net/packages/make.htm)
+- [CMake](https://cmake.org/)
 
 ### Static Linking
 This library is compiled automatically and linked statically when importing.  
