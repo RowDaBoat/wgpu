@@ -7,6 +7,7 @@ import std/sequtils
 from ../api as wgpu import nil
 # @deps wgpu.extras
 from ./types as extras import nil
+from ./strings import `$`
 
 #_______________________________________
 # @section Information
