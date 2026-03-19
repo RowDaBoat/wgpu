@@ -55,9 +55,19 @@ const dbgDir    * = trgDir/"debug"
 #   So this system calls for the wgpu-native buildsystem instead.
 #_____________________________
 static:
-  echo ": Compiling wgpu-native..."
-  when defined(debug):  sh &"cargo build --target-dir {trgDir}", wgpuDir
-  else:                 sh &"cargo build --target-dir {trgDir} --release", wgpuDir
+  # Determine the expected output library path for the current build mode/platform
+  when defined(windows):
+    when defined(debug): const libFile = dbgDir/"wgpu_native.lib"
+    else:                const libFile = rlsDir/"wgpu_native.lib"
+  else:
+    when defined(debug): const libFile = dbgDir/"libwgpu_native.a"
+    else:                const libFile = rlsDir/"libwgpu_native.a"
+  if fileExists(libFile):
+    echo ": wgpu-native already built. Skipping cargo build."
+  else:
+    echo ": Compiling wgpu-native..."
+    when defined(debug):  sh &"cargo build --target-dir {trgDir}", wgpuDir
+    else:                 sh &"cargo build --target-dir {trgDir} --release", wgpuDir
   # Fix the static linking mess of clang+mac
   when defined(macosx):
     const file = "libwgpu_native.a"
