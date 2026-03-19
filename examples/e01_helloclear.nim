@@ -8,7 +8,7 @@
 import std/strformat
 import std/os
 # External dependencies
-from pkg/nglfw as glfw import nil
+from nglfw as glfw import nil
 # Module dependencies
 import wgpu
 # Example Extensions

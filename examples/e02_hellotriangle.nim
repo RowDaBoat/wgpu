@@ -10,7 +10,7 @@ import std/os
 # @deps wgpu
 import wgpu
 # @deps external
-from pkg/nglfw as glfw import nil
+from nglfw as glfw import nil
 # @deps Example Extensions
 import ./extras  # In a real app, these should be coming from external libraries
 

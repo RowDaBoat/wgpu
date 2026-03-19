@@ -6,7 +6,7 @@
 # Creates a window that remains open until closed.  |
 #___________________________________________________|
 # @deps external
-from pkg/nglfw as glfw import nil
+from nglfw as glfw import nil
 # @deps wgpu
 import wgpu
 # @deps examples

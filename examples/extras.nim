@@ -8,8 +8,8 @@
 #____________________________________________|
 import std/sequtils
 import std/math
-import pkg/vmath ; export vmath
-from   pkg/nglfw as glfw import nil
+import vmath ; export vmath
+from   nglfw as glfw import nil
 
 #________________________________________________
 # types.nim

@@ -57,11 +57,15 @@ const dbgDir    * = trgDir/"debug"
 static:
   # Determine the expected output library path for the current build mode/platform
   when defined(windows):
-    when defined(debug): const libFile = dbgDir/"wgpu_native.lib"
-    else:                const libFile = rlsDir/"wgpu_native.lib"
+    when defined(debug):
+      const libFile = dbgDir/"wgpu_native.lib"
+    else:
+      const libFile = rlsDir/"wgpu_native.lib"
   else:
-    when defined(debug): const libFile = dbgDir/"libwgpu_native.a"
-    else:                const libFile = rlsDir/"libwgpu_native.a"
+    when defined(debug):
+      const libFile = dbgDir/"libwgpu_native.a"
+    else:
+      const libFile = rlsDir/"libwgpu_native.a"
   if fileExists(libFile):
     echo ": wgpu-native already built. Skipping cargo build."
   else:
